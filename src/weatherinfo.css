@@ -1,0 +1,19 @@
+#mainWeatherDiv {
+    width: 100%;
+    display: inline-block;
+}
+#weatherWrapper {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 20px;
+
+}
+.cityWeatherDiv {
+    background-color: grey;
+    height: 200px;
+    border-radius: 6px;
+}
+html, body {
+    margin: 0;
+}
