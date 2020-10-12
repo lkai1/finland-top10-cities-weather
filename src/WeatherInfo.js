@@ -5,26 +5,31 @@ const WeatherInfo = () => {
     const [date, setDate] = useState("")
     const [time, setTime] = useState("")
     let datetime = new Date()
+    const urlTime = `${datetime.getFullYear()}-${datetime.getMonth() + 1}-${datetime.getDate()}`
     const hours = () => {
         return datetime.getHours()
     }
     useEffect(() => {
         setDate(`${datetime.getDate()}.${datetime.getMonth() + 1}.${datetime.getFullYear()}`)
         setTime(datetime.getHours())
+        
     }, [])
     const GetTemperature = ({ city }) => {
+        let mounted = true
         const [temp, setTemp] = useState("")
         useEffect(() => {
-            console.log("hi")
-            axios.get(`http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${city}&parameters=Temperature&starttime=2020-10-9T00:00:00Z&endtime=2020-10-9T23:59:59Z&`, {
+            axios.get(`http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${city}&parameters=Temperature&starttime=${urlTime}T00:00:00Z&endtime=${urlTime}T23:59:59Z&`, {
                 "Content-Type": "application/xml; charset=utf-8"
             }).then(response => {
+                if(mounted){
+                console.log(urlTime)
                 const parser = new DOMParser();
                 const apiResponse = response.data
                 const parsedData = parser.parseFromString(apiResponse, 'text/xml')
                 let rawTemp = (parsedData.getElementsByTagName("wml2:MeasurementTVP")[hours() - 1].childNodes[3].innerHTML)
-                setTemp(rawTemp.split("."))
+                setTemp(rawTemp.split("."))}
             })
+            return () => mounted = false;
         }, [])
         return (
             <p>{temp[0] + " °C"}</p>
