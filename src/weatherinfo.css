@@ -1,18 +1,24 @@
 #mainWeatherDiv {
     width: 100%;
     display: inline-block;
+    padding: 20px;
+    background-color: rgb(105, 145, 255);
 }
 #weatherWrapper {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(5, 100px);
+    grid-template-columns: repeat(5, 110px);
     grid-gap: 20px;
 
 }
 .cityWeatherDiv {
-    background-color: grey;
-    height: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(243, 247, 40);
+    height: 175px;
     border-radius: 6px;
+}
+.cities {
+    font-family: fantasy;
 }
 html, body {
     margin: 0;

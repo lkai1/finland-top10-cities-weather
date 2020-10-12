@@ -5,7 +5,7 @@ import WeatherInfo from './WeatherInfo'
 const FrontPage = () => {
   return (
     <div className="frontPage">
-      <p>Top10 kaupunkien sää</p>
+      <p id="topText">Top10 kaupunkien sää</p>
       <WeatherInfo />
     </div>
   );

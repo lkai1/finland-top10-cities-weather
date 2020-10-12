@@ -1,3 +1,7 @@
 .frontPage {
   text-align: center;
 }
+#topText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+}
