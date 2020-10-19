@@ -27,13 +27,19 @@ const WeatherInfo = () => {
                     const apiResponse = response.data
                     const parsedData = parser.parseFromString(apiResponse, 'text/xml')
                     let rawTemp = (parsedData.getElementsByTagName("wml2:MeasurementTVP")[hours() - 1].childNodes[3].innerHTML)
-                    setTemp(rawTemp.split("."))
+                    if ([0, 1, 2, 3, 4, 5].includes(datetime.getHours())) {
+                        setTemp("Available after 6")
+                    } else if (rawTemp.split(".")[0] === "-0") {
+                        setTemp("0 °C")
+                    } else {
+                        setTemp(`${rawTemp.split(".")[0]} °C`)
+                    }
                 }
             })
             return () => mounted = false;
         }, [])
         return (
-            <p>{temp[0] + " °C"}</p>
+            <p>{temp}</p>
         )
     }
 
