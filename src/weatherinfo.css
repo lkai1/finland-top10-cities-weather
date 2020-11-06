@@ -1,25 +1,26 @@
 #mainWeatherDiv {
-    width: 100%;
+    width: 80%;
     display: inline-block;
-    padding: 20px;
-    background-color: rgb(105, 145, 255);
-}
-#weatherWrapper {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(5, 110px);
-    grid-gap: 20px;
-
 }
 .cityWeatherDiv {
+    top: 260px;
+    width: 100px;
+    margin-left: -50px;
+    left: 50%;
+    position: absolute;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(243, 247, 40);
-    height: 175px;
     border-radius: 6px;
 }
 .cities {
     font-family: fantasy;
 }
+#picture {
+    margin-top: 130px;
+}
 html, body {
     margin: 0;
+    padding: 0;
+}
+img {
+    border-radius: 30%;
 }
