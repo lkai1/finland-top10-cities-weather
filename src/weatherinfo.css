@@ -1,36 +1,39 @@
 #mainWeatherDiv {
     position: absolute;
-    top: 50px;
-    text-align: center;
+    top: 70px;
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
+    width: 300px;
+    text-align: center;
+    margin-left: -150px;
 }
-.cityWeatherDiv {
-    position: absolute;
-    top: 50px;
-    width: 100px;
-    left: 50px;
+#cityWeatherDiv {
+    border-radius: 25px;
+    padding-top: 2px;
+    padding-bottom: 16px;
+    background-color: rgba(24, 141, 141, 0.247);
+    margin-top: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 6px;
 }
-.cities {
-    font-size: large;
-    font-weight: bold;
+#city {
+    color: rgb(8, 32, 71);
+    font-size: x-large;
+    font-weight: bolder;
     font-family: Verdana, Geneva, Tahoma, sans-serif;;
 }
-#picture {
-    margin-top: 130px;
+#temp {
+    font-size: large;
+    font-weight: bold;
 }
-html {
-    margin: 0;
-    padding: 0;
+.picture {
+    margin-top: 40px;
+    height: 175px;
+    width: 175px;
 }
 input {
+    font-size: larger;
+    height: 45px;
+    width: 240px;
     text-align: center;
-    border: none;
-    margin: none;
-    padding: 5;
     outline: none;
     border-radius: 20px;
 }
