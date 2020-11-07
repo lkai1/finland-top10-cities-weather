@@ -1,26 +1,36 @@
 #mainWeatherDiv {
-    width: 80%;
-    display: inline-block;
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
 }
 .cityWeatherDiv {
-    top: 260px;
-    width: 100px;
-    margin-left: -50px;
-    left: 50%;
     position: absolute;
+    top: 50px;
+    width: 100px;
+    left: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 6px;
 }
 .cities {
-    font-family: fantasy;
+    font-size: large;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
 }
 #picture {
     margin-top: 130px;
 }
-html, body {
+html {
     margin: 0;
     padding: 0;
 }
-img {
-    border-radius: 30%;
+input {
+    text-align: center;
+    border: none;
+    margin: none;
+    padding: 5;
+    outline: none;
+    border-radius: 20px;
 }

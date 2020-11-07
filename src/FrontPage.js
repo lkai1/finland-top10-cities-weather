@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './frontPage.css';
 import WeatherInfo from './WeatherInfo'
-
 const FrontPage = () => {
   return (
-    <div className="frontPage">
-      <p id="topText">Suomen lämpötilat</p>
+    <div >
       <WeatherInfo />
     </div>
   );
