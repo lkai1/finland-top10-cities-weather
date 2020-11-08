@@ -45,7 +45,7 @@ const WeatherInfo = () => {
             const apiResponse = response.data
             const parsedData = parser.parseFromString(apiResponse, 'text/xml')
             if ([0, 1, 2, 3, 4, 5].includes(datetime.getHours())) {
-                setTemp("Available after 6")
+                setTemp("Lämpötila on näkyvissä kello 6 jälkeen.")
             } else {
                 let rawTemp = (parsedData.getElementsByTagName("wml2:MeasurementTVP")[hours() - 1].childNodes[3].innerHTML)
                 if (rawTemp.split(".")[0] === "-0") {
