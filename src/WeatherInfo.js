@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './weatherinfo.css'
 import axios from 'axios'
 import raining from './raining.png'
@@ -37,7 +37,7 @@ const WeatherInfo = () => {
 
         let isError = false
         event.preventDefault()
-        axios.get(`http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${kaupunki}&parameters=Temperature&starttime=${urlTime}T00:00:00Z&endtime=${urlTime}T23:59:59Z`, {
+        axios.get(`https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${kaupunki}&parameters=Temperature&starttime=${urlTime}T00:00:00Z&endtime=${urlTime}T23:59:59Z`, {
             "Content-Type": "application/xml; charset=utf-8"
         }).then(response => {
             console.log(urlTime)
@@ -65,7 +65,7 @@ const WeatherInfo = () => {
             }
         })
         if (!isError) {
-            axios.get(`http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${kaupunki}&parameters=WeatherSymbol3&starttime=${urlTime}T00:00:00Z&endtime=${urlTime}T23:59:59Z`, {
+            axios.get(`https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::timevaluepair&place=${kaupunki}&parameters=WeatherSymbol3&starttime=${urlTime}T00:00:00Z&endtime=${urlTime}T23:59:59Z`, {
                 "Content-Type": "application/xml; charset=utf-8"
             }).then(response => {
                 const parser = new DOMParser();
@@ -78,7 +78,6 @@ const WeatherInfo = () => {
                 } else if (weatherStyle === 21 || weatherStyle === 22 || weatherStyle === 23 || weatherStyle === 31 || weatherStyle === 32 || weatherStyle === 33 || weatherStyle === 71 || weatherStyle === 72 || weatherStyle === 73 || weatherStyle === 81 || weatherStyle === 82 || weatherStyle === 83) {
                     setWeatherImg(<img className="picture" src={raining} />)
                 } else if (weatherStyle === 2 || weatherStyle === 3) {
-                    console.log("here")
                     setWeatherImg(<img className="picture" src={cloudy} />)
                 } else {
                     setWeatherImg(<img className="picture" src={sunny} />)

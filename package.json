@@ -12,6 +12,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "deploy": "git push heroku main",
+    "logs:prod": "heroku logs --tail",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
