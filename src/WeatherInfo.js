@@ -96,6 +96,7 @@ const WeatherInfo = () => {
                         type="text"
                         value={kaupunki}
                         onChange={({ target }) => setKaupunki(target.value)}
+                        placeholder="kaupunki"
                     />
                     <br />
                 </form>
@@ -103,9 +104,9 @@ const WeatherInfo = () => {
                     <div id="cityWeatherDiv">
                         <p id="city">{knimi}</p>
                         <p id="temp">{temp}</p>
+                        <div>{weatherImg}</div>
                     </div>
                 }
-                <div>{weatherImg}</div>
             </div>
         </div>
     )
