@@ -11,6 +11,7 @@ import syksy from './syksy.jpg'
 import talvi from './talvi.jpg'
 
 const WeatherInfo = () => {
+    //muuta kaikki nimet suomeksi
     const [kaupunki, setKaupunki] = useState('')
     const [temp, setTemp] = useState('')
     const [knimi, setKnimi] = useState('')
